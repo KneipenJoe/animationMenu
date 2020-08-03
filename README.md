@@ -1,4 +1,4 @@
-**"# Joes Animation Menu for RageMP"** 
+## **Joes Animation Menu for RageMP**
 
 Simples CEF Animation Menü, welches mit den Pfeiltasten bedienbar ist optional natürlich mit dem Mauszeiger. 
 
