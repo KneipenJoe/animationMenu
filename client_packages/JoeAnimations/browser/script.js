@@ -89,11 +89,6 @@ class JoesAnimationMenu {
 
                 item.click();
                 break;
-
-            /*
-            case 27:
-                this.hide();
-                break;*/
         }
 
     }
@@ -125,11 +120,17 @@ class JoesAnimationMenu {
         this.menu.fadeIn();
     }
 
+    canTrigger() {
+        return (new Date() - this.lastTrigger) > this.minDifferrence;
+    }
+
+    error(message) {
+        mp.trigger("Joe_ErrorMessage", message);
+    }
+
     triggerAnimation(animation) {
-        let canTrigger = (new Date() - this.lastTrigger) > this.minDifferrence;
-        if(!canTrigger) {
-            // todo: event flooding detect..
-            alert("spam?!");
+        if(!this.canTrigger) {
+            this.error("spam?!");
             return;
         }
 
@@ -139,13 +140,17 @@ class JoesAnimationMenu {
         let group = animation[2];           // string
         let flag = animation[3];            // number(int)
 
-        // todo: trigger client and server ;)
-        alert(`distplayName: ${displayName} | dict: ${dict} | group: ${group} | flag: ${flag}`);
-
+        mp.trigger("Joe_WantPlayAnimation", displayName, dict, group, flag);
     }
 
     stopAnimation() {
-        // todo: trigger client and server to stop animation.
+        if(!this.canTrigger) {
+            this.error("spam?!");
+            return;
+        }
+
+        this.hide();
+        mp.trigger("Joe_WantStopAnimation");
     }
 
     keyPress(mode) {
