@@ -1,0 +1,100 @@
+boddy, html {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+:root {
+    --anim_mainColor: rgba(115, 160, 66, 0.8);
+    --anim_fontColor: white;
+    --anim_stopButtonColor: orange;
+}
+
+.animationMenu {
+    user-select: none;
+    position: absolute;
+    right: 25px;
+    top: 100px;
+    min-height: 100px;
+    max-height: 600px;
+    width: 500px;
+    background-color: var(--anim_mainColor);
+    box-shadow: 2px 2px 15px 0 var(--anim_mainColor);
+}
+
+.animationMenu > .title {
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    background-color: var(--anim_mainColor);
+    margin: 0;
+    padding: 0;
+    color: var(--anim_fontColor);
+}
+
+.animationMenu > .title h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.animationMenu > .title > .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 32px;
+    width: 32px;
+    padding: 2px;
+    line-height: 32px;
+    text-align: center;
+    transition: ease all .4s;
+    cursor: pointer;
+    font-size: 24px;
+    opacity: .25;
+}
+
+.animationMenu > .title > .close:hover {
+    opacity: 1;
+    background-color: darkred;
+}
+
+.animationMenu > .content {
+    width: 100%;
+    min-height: 164px;
+    max-height: 564px;
+    overflow-x: auto;
+}
+
+.animationMenu > .content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.animationMenu > .content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.animationMenu > .content::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+.animationMenu > .content::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.animationMenu > .content > .listItem {
+    background-color: rgba(0, 0, 0, .3);
+    height: 32px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 32px;
+    transition: ease all .2s;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    color: var(--anim_fontColor);
+}
+
+.animationMenu > .content > .listItem:hover,
+.animationMenu > .content > .listItem.active {
+    background-color: rgba(0, 0, 0, .6);
+}

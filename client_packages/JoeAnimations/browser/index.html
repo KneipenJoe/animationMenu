@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animation Menü</title>
+    <meta charset="UTF-8">
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            let anims = [
+                ["Sitzen", "anim@heists@fleeca_bank@ig_7_jetski_owner", "owner_idle", 33],
+                ["Knien", "amb@medic@standing@kneel@base", "base", 34],
+                ["Arme Verschränken", "anim@heists@heist_corona@single_team", "single_team_loop_boss", 34],
+                ["Russenhocke", "anim@mp_player_intcelebrationmale@salsa_roll", "salsa_roll", 33],
+                ["Türsteher", "mini@strip_club@idles@bouncer@idle_a", "idle_a", 33],
+                ["Peace", "anim@mp_player_intincarpeacestd@ds@", "idle_a", 33],
+                ["Gangzeichen", "mp_player_int_uppergang_sign_b", "mp_player_int_gang_sign_b_exit", 33]
+            ];
+
+            let animMen = new JoesAnimationMenu(anims);
+
+        });
+    </script>
+</body>
+</html>
